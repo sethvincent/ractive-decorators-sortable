@@ -3,7 +3,7 @@
 	Ractive-decorators-sortable
 	===========================
 
-	Version <%= VERSION %>.
+	Version 0.1.0.
 
 	This plugin adds a 'sortable' decorator to Ractive, which enables
 	elements that correspond to array members to be re-ordered using
@@ -125,7 +125,7 @@
 
 	dragstartHandler = function ( event ) {
 		var storage = this._ractive, lastDotIndex;
-
+		
 		sourceKeypath = storage.keypath;
 
 		// this decorator only works with array members!
@@ -143,7 +143,9 @@
 		}
 
 		event.dataTransfer.setData( 'foo', true ); // enables dragging in FF. go figure
-
+		
+		this._ractive.root.fire('dragstart');
+				
 		// keep a reference to the Ractive instance that 'owns' this data and this element
 		ractive = storage.root;
 	};
@@ -189,6 +191,8 @@
 
 		// add source back to array in new location
 		array.splice( sourceIndex, 0, source );
+		
+		this._ractive.root.fire('dragenter');
 	};
 
 	removeTargetClass = function () {
