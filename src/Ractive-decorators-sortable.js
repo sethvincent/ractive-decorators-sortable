@@ -197,6 +197,7 @@
 
 	removeTargetClass = function () {
 		this.classList.remove( sortable.targetClass );
+		this._ractive.root.fire('drop');
 	};
 
 	preventDefault = function ( event ) { event.preventDefault(); };
