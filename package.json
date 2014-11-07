@@ -18,8 +18,5 @@
     "grunt-contrib-uglify": "~0.2.5",
     "grunt-contrib-jshint": "~0.7.0",
     "grunt-contrib-copy": "~0.4.1"
-  },
-  "dependencies": {
-    "ractive-decorators-sortable": "git://github.com/sethvincent/Ractive-decorators-sortable"
   }
 }
