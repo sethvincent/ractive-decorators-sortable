@@ -197,7 +197,7 @@
 	};
 	
 	dropHandler = function () {
-		removeTargetClass();
+		this.classList.remove( sortable.targetClass );
 		this._ractive.root.fire('drop');
 	};
 
